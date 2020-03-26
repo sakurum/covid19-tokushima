@@ -12,11 +12,11 @@
 <meta name="format-detection" content="telephone=no"/>
 <style>
 </style>
-<script src='fukuno.js'></script>
+<script src='https://fukuno.jig.jp/fukuno2.js'></script>
 <script>"use strict"
 window.onload = async function() {
   const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT0uOUozYq67sm7A9Ms1UCycCjZ7jAeL2diK-B9h-Tw0ShdoR6DPvHR3sOiJLJLJhcKi1_HbdxFQSC9/pub?gid=649890700&single=true&output=csv'
-  const data = await fetchCSV(url)
+  const data = await fetchViaProxyCSV(url)
   console.log(data)
   dump(data)
 }
