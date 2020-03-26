@@ -1,5 +1,9 @@
 header {
-    background-color: #16244B;
+    background-color: #ffffff;
+}
+
+.header-logo {
+    text-align: center;
 }
 
 header img {
