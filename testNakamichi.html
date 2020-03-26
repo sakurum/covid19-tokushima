@@ -19,18 +19,29 @@ window.onload = async function() {
   const data = await fetchViaProxyCSV(url)
   console.log(data)
   const Key1=Object.keys(data[0]);
-  var text1="";
+  var text1="";	 
+    
   for(var roop=0; roop<data.length; roop++){
+    text1="";
+    var element = document.createElement('div'); 
+    element.id = "id"+roop;  
+ 
+	 
+    var objBody = document.getElementsByTagName("body").item(0)
+    objBody.append(element)
+    
     for (var i=0; i<Key1.length; i++){
         const sample = Key1[i]
         text1= text1+data[roop][sample]+'</br>';
         
     }
-}
-  var obj=document.getElementById('test')
-  obj.innerHTML = text1;
-  obj.style.color = '#ffffff';  
-  obj.style.backgroundColor = '#16244B';
+    var id="id"+roop
+    var obj=document.getElementById(id)
+    obj.innerHTML =text1 ;
+    obj.style.color = '#ffffff';  
+    obj.style.backgroundColor = '#16244B';
+    }
+  
 }
 </script>
 </head>
