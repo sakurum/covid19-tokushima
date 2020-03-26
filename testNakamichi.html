@@ -1,0 +1,42 @@
+<html prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="utf-8"/>
+<title>test</title>
+<meta property="og:title" content="test"/>
+<meta property="og:description" content=""/>
+<link rel="apple-touch-icon" href=""/>
+<meta name="twitter:card" content=""/>
+<meta property="og:image"  content=""/>
+<meta name="twitter:image" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="format-detection" content="telephone=no"/>
+<style>
+</style>
+<script src='https://fukuno.jig.jp/fukuno2.js'></script>
+<script>"use strict"
+window.onload = async function() {
+  const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT0uOUozYq67sm7A9Ms1UCycCjZ7jAeL2diK-B9h-Tw0ShdoR6DPvHR3sOiJLJLJhcKi1_HbdxFQSC9/pub?gid=649890700&single=true&output=csv'
+  const data = await fetchViaProxyCSV(url)
+  console.log(data)
+  const Key1=Object.keys(data[0]);
+  var text1="";
+  for(var roop=0; roop<data.length; roop++){
+    for (var i=0; i<Key1.length; i++){
+        const sample = Key1[i]
+        text1= text1+data[roop][sample]+'</br>';
+        
+    }
+}
+  var obj=document.getElementById('test')
+  obj.innerHTML = text1;
+  obj.style.color = '#ffffff';  
+  obj.style.backgroundColor = '#16244B';
+}
+</script>
+</head>
+<body>
+
+<div id=test ></div>
+
+</body>
+</html>
